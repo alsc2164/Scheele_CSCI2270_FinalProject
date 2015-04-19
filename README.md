@@ -3,6 +3,7 @@ Test Repository
 
 Summary of Code:
 Reads in a file that contains a list of numbers. Uses differen't functions to manipulate the data input. These functions include: 
+
 1) Order
   -Arranges the data from smallest to largest and outputs that order
 
