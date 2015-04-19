@@ -38,5 +38,4 @@ Reads in a file that contains a list of numbers. Uses differen't functions to ma
   -Allows the user to quit out of the function.
   
   
-  asddsad
   
