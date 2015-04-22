@@ -11,7 +11,7 @@ tree::~tree()
 }
 void tree::addNode(int s)
 {
-  if(root = NULL)
+  if(root == NULL)
   {
     root = new node;
     root->value = s;
@@ -23,7 +23,8 @@ void tree::addNode(int s)
   else
   {
     node *x = root;
-    node *p;
+    node *p = root;
+    int test = root->value;
     while(x != NULL)
     {
       if(x->value > s)
