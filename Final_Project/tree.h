@@ -23,7 +23,7 @@ private:
 public:
     tree();
     ~tree();
-
+    void addNode(int v);
 };
 
 #endif // TREE_H_INCLUDED
