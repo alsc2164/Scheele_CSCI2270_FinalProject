@@ -82,8 +82,40 @@ node *tree::searchTree(node * treeNode, int v)
             return searchTree(treeNode->right, v);
     }
 }
+
+node *tree::searchTreeValueCount(node * treeNode, int v)
+{
+    int counter = 0;
+    //node *treeNode = root;
+    if(treeNode == NULL)
+    {
+        return NULL;
+    }
+    while(treeNode->value != NULL)
+    {
+    if(treeNode->value == v)
+        return treeNode;
+        counter++;
+    }
+    while(treeNode->value != NULL)
+    {
+        if(treeNode->value > v )
+            {
+                return searchTreeValueCount(treeNode->left, v);
+                counter++;
+            }
+            else
+                return searchTreeValueCount(treeNode->right, v);
+                counter++;
+        }
+    }
+
+
 void tree::deleteNode(int v)
 {
+    node *foundNode = searchTreeValueCount(root, v);
+    while(counter > 0)
+    {
     node * foundNode = searchTree(root, v);
     if(foundNode != NULL)
     {
@@ -140,9 +172,11 @@ void tree::deleteNode(int v)
             delete replaceNode;
         }
     }
+    counter--;
+    }
     else
     {
-       // cout<<"Value not found."<<endl;
+       cout<<"Value not found."<<endl;
     }
 }
 node* tree::print(node* n)
