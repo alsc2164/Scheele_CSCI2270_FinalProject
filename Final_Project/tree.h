@@ -20,11 +20,13 @@ private:
     int mode;
     int length;
     int treeHEIGHT;
+    node *searchTree(node *treeNode, int v);
 public:
     tree();
     ~tree();
     void addNode(int v);
-    void deleteNode();
+    void deleteNode(int v);
+
 };
 
 #endif // TREE_H_INCLUDED
