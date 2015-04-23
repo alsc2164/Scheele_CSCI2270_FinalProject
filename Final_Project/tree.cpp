@@ -1,6 +1,8 @@
 #include "tree.h"
 #include <string>
 
+using namespace std;
+
 tree::tree()
 {
   root = NULL;
@@ -70,12 +72,12 @@ node *tree::searchTree(node * treeNode, int v)
         return treeNode;
     else
     {
-        if(v.compare(treeNode->value) < 0)
+        if(treeNode->value > v )
         {
-            return searchTree(treeNode->left,value);
+            return searchTree(treeNode->left, v);
         }
         else
-            return searchTree(treeNode->right, value);
+            return searchTree(treeNode->right, v);
     }
 }
 
@@ -83,9 +85,9 @@ node *tree::searchTree(node * treeNode, int v)
 
 
 
-void tree::deleteNode(int s)
+void tree::deleteNode(int v)
 {
-    node * foundNode = searchMovieTree(root,value);
+    node * foundNode = searchTree(root, v);
     if(foundNode != NULL)
     {
         if(foundNode->left == NULL && foundNode->right == NULL)
@@ -142,6 +144,8 @@ void tree::deleteNode(int s)
         }
     }
     else
-        cout<<"Value not found."<<endl;
+    {
+       // cout<<"Value not found."<<endl;
+    }
 }
-}
+

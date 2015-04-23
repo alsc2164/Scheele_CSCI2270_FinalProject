@@ -11,10 +11,11 @@ int main(int argc, char* argv[])
     tree t;
     string STRING;
     ifstream infile("number.txt");
-    int rankings;
-    string title;
-    int year;
-    int quantity;
+    //int rankings;
+    //string title;
+    int v;
+    //int year;
+    //int quantity;
     while(getline(infile,STRING))
     {
         stringstream ss(STRING);
@@ -92,10 +93,16 @@ int main(int argc, char* argv[])
                     switch(pick2)
                     {
                     case 1:
-                        cout << "add" << endl;
+                        cout << "Add:" << endl;
                         break;
-                    case 2:
-                        cout << "remove" << endl;
+                    case 2:{
+                        cout << "Remove:" << endl;
+                        cin.ignore(256, '\n');
+                        string tempA;
+                        char temp[256];
+                        getline(cin, tempA);
+                        v = atoi(tempA.c_str());
+                        t.deleteNode(v);}
                         break;
                     }
                 }
