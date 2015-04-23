@@ -159,6 +159,7 @@ node* tree::print(node* n)
 }
 void tree::printOrder()
 {
+    order.clear();
     print(root);
     std::cout << std::endl;
 }
