@@ -21,7 +21,10 @@ private:
     int length;
     int treeHEIGHT;
     node *searchTree(node *treeNode, int v);
+<<<<<<< HEAD
     node *searchTreeValueCount(node *treeNode, int v);
+=======
+>>>>>>> bdaa3881b4abc6bc2742eb4914fae60bbb9eae86
     node *print(node *n);
 public:
     tree();

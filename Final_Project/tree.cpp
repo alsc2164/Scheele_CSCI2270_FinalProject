@@ -82,6 +82,7 @@ node *tree::searchTree(node * treeNode, int v)
             return searchTree(treeNode->right, v);
     }
 }
+<<<<<<< HEAD
 
 node *tree::searchTreeValueCount(node * treeNode, int v)
 {
@@ -111,6 +112,8 @@ node *tree::searchTreeValueCount(node * treeNode, int v)
     }
 
 
+=======
+>>>>>>> bdaa3881b4abc6bc2742eb4914fae60bbb9eae86
 void tree::deleteNode(int v)
 {
     node *foundNode = searchTreeValueCount(root, v);
