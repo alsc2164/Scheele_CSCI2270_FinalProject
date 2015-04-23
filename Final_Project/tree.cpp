@@ -1,5 +1,7 @@
 #include "tree.h"
 #include <string>
+#include <iostream>
+
 
 using namespace std;
 
@@ -80,11 +82,6 @@ node *tree::searchTree(node * treeNode, int v)
             return searchTree(treeNode->right, v);
     }
 }
-
-
-
-
-
 void tree::deleteNode(int v)
 {
     node * foundNode = searchTree(root, v);
@@ -148,4 +145,21 @@ void tree::deleteNode(int v)
        // cout<<"Value not found."<<endl;
     }
 }
-
+node* tree::print(node* n)
+{
+    node *x = n;
+    if(x->left!=NULL){
+        print(x->left);
+    }
+    std::cout<< x->value << ", ";
+    order.push_back(x->value);
+    if(x->right!=NULL){
+        print(x->right);
+    }
+}
+void tree::printOrder()
+{
+    order.clear();
+    print(root);
+    std::cout << std::endl;
+}

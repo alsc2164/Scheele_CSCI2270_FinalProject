@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
                     switch(pick2)
                     {
                     case 1:
-                        cout << "Order" << endl;
+                        t.printOrder();
                         break;
                     case 2:
                         cout << "Max" << endl;
