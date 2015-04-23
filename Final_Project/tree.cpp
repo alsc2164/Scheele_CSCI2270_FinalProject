@@ -4,7 +4,7 @@
 
 
 using namespace std;
-
+int counter = 0;
 tree::tree()
 {
   root = NULL;
@@ -62,7 +62,7 @@ void tree::addNode(int s)
     }
   }
 }
-
+/*
 node *tree::searchTree(node * treeNode, int v)
 {
     //node *treeNode = root;
@@ -82,104 +82,115 @@ node *tree::searchTree(node * treeNode, int v)
             return searchTree(treeNode->right, v);
     }
 }
-<<<<<<< HEAD
-
-node *tree::searchTreeValueCount(node * treeNode, int v)
+*/
+node *tree::searchTree(node * treeNode, int v)
 {
-    int counter = 0;
+    //int counter = 0;
     //node *treeNode = root;
-    if(treeNode == NULL)
-    {
-        return NULL;
-    }
     while(treeNode->value != NULL)
     {
-    if(treeNode->value == v)
-        return treeNode;
-        counter++;
-    }
-    while(treeNode->value != NULL)
-    {
-        if(treeNode->value > v )
-            {
-                return searchTreeValueCount(treeNode->left, v);
-                counter++;
-            }
-            else
-                return searchTreeValueCount(treeNode->right, v);
-                counter++;
+        if(treeNode->value == v)
+        {
+            return treeNode;
+            treeNode = root;
+            counter++;
         }
-    }
+        else if(treeNode->value > v )
+        {
+            return searchTree(treeNode->left, v);
 
-
-=======
->>>>>>> bdaa3881b4abc6bc2742eb4914fae60bbb9eae86
-void tree::deleteNode(int v)
-{
-    node *foundNode = searchTreeValueCount(root, v);
-    while(counter > 0)
-    {
-    node * foundNode = searchTree(root, v);
-    if(foundNode != NULL)
-    {
-        if(foundNode->left == NULL && foundNode->right == NULL)
-        {
-            if(foundNode->parent->left == foundNode)
-            {
-                foundNode->parent->left = NULL;
-            }
-            else
-                foundNode->parent->right = NULL;
-            delete foundNode;
-        }
-        else if(foundNode->right == NULL)
-        {
-            if(foundNode->parent->left == foundNode)
-            {
-                foundNode->parent->left = foundNode->left;
-            }
-            else
-                foundNode->parent->right = foundNode->left;
-            delete foundNode;
-        }
-        else if(foundNode->left == NULL)
-        {
-            if(foundNode->parent->left == foundNode)
-            {
-                foundNode->parent->left = foundNode->right;
-            }
-            else
-                foundNode->parent->right = foundNode->right;
-            delete foundNode;
         }
         else
         {
-            node * replaceNode = foundNode->right;
+            return searchTree(treeNode->right, v);
 
-            while(replaceNode->left != NULL)
-            {
-                replaceNode = replaceNode->left;
-            }
-
-            foundNode->value = replaceNode->value;
-            if(replaceNode->right != NULL)
-            {
-                replaceNode->right->parent = replaceNode->parent;
-            }
-            if(replaceNode->parent->left == replaceNode)
-            {
-                replaceNode->parent->left = replaceNode->right;
-            }
-            else
-                replaceNode->parent->right = replaceNode->right;
-            delete replaceNode;
         }
-    }
-    counter--;
-    }
+    treeNode = root;
+    if(treeNode == NULL)
+        {
+            return NULL;
+        }
+    else if(treeNode->value == v)
+        return treeNode;
     else
     {
-       cout<<"Value not found."<<endl;
+        if(treeNode->value > v )
+        {
+            return searchTree(treeNode->left, v);
+        }
+        else
+            return searchTree(treeNode->right, v);
+    }
+
+    }
+
+}
+
+
+void tree::deleteNode(int v)
+{
+    //node *foundNode = searchTreeValueCount(root, v);
+   // while(counter > 0)
+    //{
+    node * foundNode = searchTree(root, v);
+    while(counter > 0)
+    {
+        if(foundNode != NULL)
+        {
+            if(foundNode->left == NULL && foundNode->right == NULL)
+            {
+                if(foundNode->parent->left == foundNode)
+                {
+                    foundNode->parent->left = NULL;
+                }
+                else
+                    foundNode->parent->right = NULL;
+                delete foundNode;
+            }
+            else if(foundNode->right == NULL)
+            {
+                if(foundNode->parent->left == foundNode)
+                {
+                    foundNode->parent->left = foundNode->left;
+                }
+                else
+                    foundNode->parent->right = foundNode->left;
+                delete foundNode;
+            }
+            else if(foundNode->left == NULL)
+            {
+                if(foundNode->parent->left == foundNode)
+                {
+                    foundNode->parent->left = foundNode->right;
+                }
+                else
+                    foundNode->parent->right = foundNode->right;
+                delete foundNode;
+            }
+            else
+            {
+                node * replaceNode = foundNode->right;
+
+                while(replaceNode->left != NULL)
+                {
+                    replaceNode = replaceNode->left;
+                }
+
+                foundNode->value = replaceNode->value;
+                if(replaceNode->right != NULL)
+                {
+                    replaceNode->right->parent = replaceNode->parent;
+                }
+                if(replaceNode->parent->left == replaceNode)
+                {
+                    replaceNode->parent->left = replaceNode->right;
+                }
+                else
+                    replaceNode->parent->right = replaceNode->right;
+                delete replaceNode;
+            }
+        }
+        counter--;
     }
 }
 node* tree::print(node* n)
