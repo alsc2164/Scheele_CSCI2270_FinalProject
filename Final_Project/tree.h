@@ -24,6 +24,7 @@ public:
     tree();
     ~tree();
     void addNode(int v);
+    void deleteNode();
 };
 
 #endif // TREE_H_INCLUDED
