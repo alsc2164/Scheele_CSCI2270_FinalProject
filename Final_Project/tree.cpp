@@ -71,7 +71,9 @@ node *tree::searchTree(node * treeNode, int v)
         return NULL;
     }
     else if(treeNode->value == v)
+    {
         return treeNode;
+    }
     else
     {
         if(treeNode->value > v )
@@ -134,8 +136,8 @@ void tree::deleteNode(int v)
    // while(counter > 0)
     //{
     node * foundNode = searchTree(root, v);
-    while(counter > 0)
-    {
+    //while(counter > 0)
+    //{
         if(foundNode != NULL)
         {
             if(foundNode->left == NULL && foundNode->right == NULL)
@@ -191,9 +193,8 @@ void tree::deleteNode(int v)
                 delete replaceNode;
             }
         }
-        counter--;
+        //counter--;
     }
-}
 node* tree::print(node* n)
 {
     node *x = n;
@@ -231,4 +232,9 @@ int tree::minimum()
         x = x->left;
     }
     return x->value;
+}
+
+int tree::total()
+{
+
 }

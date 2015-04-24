@@ -33,6 +33,7 @@ public:
     void printOrder();
     int maximum();
     int minimum();
+    int total();
 };
 
 #endif // TREE_H_INCLUDED

@@ -60,22 +60,22 @@ int main(int argc, char* argv[])
                         t.printOrder();
                         break;
                     case 2:
-                        cout << "Max: " << t.maximum()<<endl;
+                        cout << "Max Value: " << t.maximum()<<endl;
                         break;
                     case 3:
-                        cout << "Min: " << t.minimum()<< endl;
+                        cout << "Min Value: " << t.minimum()<< endl;
                         break;
                     case 4:
-                        cout << "Average" << endl;
+                        cout << "Average: " << endl;
                         break;
                     case 5:
-                        cout << "Frequency" << endl;
+                        cout << "Frequency: " << endl;
                         break;
                     case 6:
                         cout << "Total" << endl;
                         break;
                     case 7:
-                        cout << "Height" << endl;
+                        cout << "Tree Height: " << endl;
                         break;
                     }
                 }
@@ -93,8 +93,14 @@ int main(int argc, char* argv[])
                     cin >> pick2;
                     switch(pick2)
                     {
-                    case 1:
+                    case 1:{
                         cout << "Add:" << endl;
+                        cin.ignore(256, '\n');
+                        string tempA;
+                        char temp[256];
+                        getline(cin, tempA);
+                        v = atoi(tempA.c_str());
+                        t.addNode(v);}
                         break;
                     case 2:{
                         cout << "Remove:" << endl;
