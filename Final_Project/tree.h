@@ -23,12 +23,16 @@ private:
     node *searchTree(node *treeNode, int v);
     //node *searchTreeValueCount(node *treeNode, int v);
     node *print(node *n);
+    //node* maximum(node* n);
+
 public:
     tree();
     ~tree();
     void addNode(int v);
     void deleteNode(int v);
     void printOrder();
+    int maximum();
+    int minimum();
 };
 
 #endif // TREE_H_INCLUDED

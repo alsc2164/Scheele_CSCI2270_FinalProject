@@ -14,6 +14,7 @@ int main(int argc, char* argv[])
     //int rankings;
     //string title;
     int v;
+    node* n;
     //int year;
     //int quantity;
     while(getline(infile,STRING))
@@ -59,10 +60,10 @@ int main(int argc, char* argv[])
                         t.printOrder();
                         break;
                     case 2:
-                        cout << "Max" << endl;
+                        cout << "Max: " << t.maximum()<<endl;
                         break;
                     case 3:
-                        cout << "Min" << endl;
+                        cout << "Min: " << t.minimum()<< endl;
                         break;
                     case 4:
                         cout << "Average" << endl;

@@ -62,7 +62,7 @@ void tree::addNode(int s)
     }
   }
 }
-/*
+
 node *tree::searchTree(node * treeNode, int v)
 {
     //node *treeNode = root;
@@ -82,7 +82,8 @@ node *tree::searchTree(node * treeNode, int v)
             return searchTree(treeNode->right, v);
     }
 }
-*/
+
+/*
 node *tree::searchTree(node * treeNode, int v)
 {
     //int counter = 0;
@@ -126,7 +127,7 @@ node *tree::searchTree(node * treeNode, int v)
 
 }
 
-
+*/
 void tree::deleteNode(int v)
 {
     //node *foundNode = searchTreeValueCount(root, v);
@@ -210,4 +211,24 @@ void tree::printOrder()
     order.clear();
     print(root);
     std::cout << std::endl;
+}
+
+int tree::maximum()
+{
+    node *x = root;
+    while(x->right != NULL)
+    {
+        x = x->right;
+    }
+    return x->value;
+}
+
+int tree::minimum()
+{
+    node *x = root;
+    while(x->left != NULL)
+    {
+        x = x->left;
+    }
+    return x->value;
 }
