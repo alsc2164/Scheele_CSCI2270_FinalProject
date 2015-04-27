@@ -23,6 +23,7 @@ private:
     node *searchTree(node *treeNode, int v);
     //node *searchTreeValueCount(node *treeNode, int v);
     node *print(node *n);
+    node *build(node *n);
     //node* maximum(node* n);
 
 public:
@@ -33,7 +34,9 @@ public:
     void printOrder();
     int maximum();
     int minimum();
+    int ave();
     int total();
+    int frequency(int n);
 };
 
 #endif // TREE_H_INCLUDED

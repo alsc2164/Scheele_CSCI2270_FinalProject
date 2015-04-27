@@ -205,6 +205,17 @@ node* tree::print(node* n)
         print(x->right);
     }
 }
+node* tree::build(node* n)
+{
+    node *x = n;
+    if(x->left!=NULL){
+        build(x->left);
+    }
+    order.push_back(x->value);
+    if(x->right!=NULL){
+        build(x->right);
+    }
+}
 void tree::printOrder()
 {
     order.clear();
@@ -236,5 +247,31 @@ int tree::minimum()
 
 int tree::total()
 {
-
+    order.clear();
+    build(root);
+    sum = 0;
+    for(int i = 0; i < order.size(); i++)
+    {
+        sum = sum + order[i];
+    }
+    return sum;
+}
+int tree::ave()
+{
+    total();
+    return sum/order.size();
+}
+int tree::frequency(int n)
+{
+    order.clear();
+    build(root);
+    int counter = 0;
+    for(int i = 0; i <order.size(); i++)
+    {
+        if(order[i] == n)
+        {
+            counter++;
+        }
+    }
+    return counter;
 }

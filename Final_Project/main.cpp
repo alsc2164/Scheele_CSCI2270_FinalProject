@@ -66,13 +66,18 @@ int main(int argc, char* argv[])
                         cout << "Min Value: " << t.minimum()<< endl;
                         break;
                     case 4:
-                        cout << "Average: " << endl;
+                        cout  << "The average is: " << t.ave() << endl;
                         break;
-                    case 5:
-                        cout << "Frequency: " << endl;
+                    case 5:{
+                        int pick;
+                        cout << "Enter the number you want to find the frequency of: " << endl;
+                        cin >> pick;
+                        cout << pick << endl;
+                        cout << "This number appears " << t.frequency(pick) << " times." << endl;
+                    }
                         break;
                     case 6:
-                        cout << "Total" << endl;
+                        cout << "The total is: " << t.total() << endl;
                         break;
                     case 7:
                         cout << "Tree Height: " << endl;
