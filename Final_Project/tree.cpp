@@ -13,6 +13,8 @@ tree::~tree()
 {
 
 }
+
+//adds a node to the tree and positions it in the correct place by adjusting the tree need be. (Adds a node given by user)
 void tree::addNode(int s)
 {
   if(root == NULL)
@@ -63,6 +65,7 @@ void tree::addNode(int s)
   }
 }
 
+//searches the tree for a value chosen by the user
 node *tree::searchTree(node * treeNode, int v)
 {
     //node *treeNode = root;
@@ -130,14 +133,10 @@ node *tree::searchTree(node * treeNode, int v)
 }
 
 */
+//deletes a node given by the user, and adjusts the tree need be
 void tree::deleteNode(int v)
 {
-    //node *foundNode = searchTreeValueCount(root, v);
-   // while(counter > 0)
-    //{
     node * foundNode = searchTree(root, v);
-    //while(counter > 0)
-    //{
         if(foundNode != NULL)
         {
             if(foundNode->left == NULL && foundNode->right == NULL)
@@ -193,7 +192,6 @@ void tree::deleteNode(int v)
                 delete replaceNode;
             }
         }
-        //counter--;
     }
 node* tree::print(node* n)
 {
@@ -214,6 +212,7 @@ void tree::printOrder()
     std::cout << std::endl;
 }
 
+//prints the maximum value in the tree
 int tree::maximum()
 {
     node *x = root;
@@ -224,6 +223,7 @@ int tree::maximum()
     return x->value;
 }
 
+//prints the minimum value in the tree
 int tree::minimum()
 {
     node *x = root;
