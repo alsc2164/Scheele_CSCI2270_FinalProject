@@ -1,6 +1,4 @@
 # Scheele_CSCI2270_FinalProject
-Test Repository
-
 Summary of Code:
 Reads in a file that contains a list of numbers. Uses differen't functions to manipulate the data input. These functions include: 
 
@@ -37,5 +35,6 @@ Reads in a file that contains a list of numbers. Uses differen't functions to ma
 11) Quit
   -Allows the user to quit out of the function.
   
-  
+Directions for use:
+  The code reads in a file as a command line argument. Numbers should be entered either comma seperated or each number on their own line. Once running the user will be promted to select what the user would like to do with the data.
   
