@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
         case 1:
             {
                 int pick2 = 0;
-                while(pick2 != 8)
+                while(pick2 != 9)
                 {
                     cout << "====Print Data Menu====" << endl;
                     cout << "1.Print Data in Order" << endl;
@@ -52,7 +52,8 @@ int main(int argc, char* argv[])
                     cout << "5.Find Number Frequency" << endl;
                     cout << "6.Print total" << endl;
                     cout << "7.Print tree height" << endl;
-                    cout << "8.Back to main menu" << endl;
+                    cout << "8.Print Number of data Points" << endl;
+                    cout << "9.Back to main menu" << endl;
                     cin >> pick2;
                     switch(pick2)
                     {
@@ -81,6 +82,9 @@ int main(int argc, char* argv[])
                         break;
                     case 7:
                         cout << "Tree Height: " << t.treeH()<<endl;
+                        break;
+                    case 8:
+                        cout << "The number of data points: " << t.length() << endl;
                         break;
                     }
                 }
@@ -120,8 +124,10 @@ int main(int argc, char* argv[])
                 }
             }
             break;
-        case 3:
-            cout << "Output File" << endl;
+        case 3:{
+                cout << "Output File Generated" << endl;
+                t.output();
+            }
             break;
         case 4:
             cout << "Goodbye" << endl;

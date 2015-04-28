@@ -1,6 +1,7 @@
 #include "tree.h"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 
 using namespace std;
@@ -87,52 +88,6 @@ node *tree::searchTree(node * treeNode, int v)
             return searchTree(treeNode->right, v);
     }
 }
-
-/*
-node *tree::searchTree(node * treeNode, int v)
-{
-    //int counter = 0;
-    //node *treeNode = root;
-    while(treeNode->value != NULL)
-    {
-        if(treeNode->value == v)
-        {
-            return treeNode;
-            treeNode = root;
-            counter++;
-        }
-        else if(treeNode->value > v )
-        {
-            return searchTree(treeNode->left, v);
-
-        }
-        else
-        {
-            return searchTree(treeNode->right, v);
-
-        }
-    treeNode = root;
-    if(treeNode == NULL)
-        {
-            return NULL;
-        }
-    else if(treeNode->value == v)
-        return treeNode;
-    else
-    {
-        if(treeNode->value > v )
-        {
-            return searchTree(treeNode->left, v);
-        }
-        else
-            return searchTree(treeNode->right, v);
-    }
-
-    }
-
-}
-
-*/
 //deletes a node given by the user, and adjusts the tree need be
 void tree::deleteNode(int v)
 {
@@ -286,9 +241,29 @@ int tree::treeHeight(node *p)
     int right = treeHeight(p->right);
     return 1 + std::max(left, right);
 }
-
+int tree::length()
+{
+    build(root);
+    return order.size();
+}
 int tree::treeH()
 {
     int temp = treeHeight(root);
     return temp;
+}
+void tree::output()
+{
+    build(root);
+    ofstream outfile;
+    outfile.open("outfile.txt");
+    outfile << "Output File:" << std::endl;
+    outfile << "Numbers in order: ";
+    for(int i = 0; i < order.size()-1; i++)
+    {
+        outfile << order[i] << ", ";
+    }
+    outfile << order[order.size()-1] << std::endl;
+    outfile << "Maximum: " << maximum() << " Minimum: " << minimum() << std::endl;
+    outfile << "Total: " << total() << " Average: " << ave() << std:: endl;
+    outfile.close();
 }

@@ -18,7 +18,6 @@ private:
     int height;
     int average;
     int mode;
-    int length;
     int treeHEIGHT;
     node *searchTree(node *treeNode, int v);
     //node *searchTreeValueCount(node *treeNode, int v);
@@ -39,6 +38,8 @@ public:
     int total();
     int frequency(int n);
     int treeH();
+    void output();
+    int length();
 };
 
 #endif // TREE_H_INCLUDED
