@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
                         cout << "The total is: " << t.total() << endl;
                         break;
                     case 7:
-                        cout << "Tree Height: " << endl;
+                        cout << "Tree Height: " << t.treeH()<<endl;
                         break;
                     }
                 }

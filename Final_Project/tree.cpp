@@ -275,3 +275,20 @@ int tree::frequency(int n)
     }
     return counter;
 }
+
+int tree::treeHeight(node *p)
+{
+    if(p == NULL)
+    {
+        return -1;
+    }
+    int left = treeHeight(p->left);
+    int right = treeHeight(p->right);
+    return 1 + std::max(left, right);
+}
+
+int tree::treeH()
+{
+    int temp = treeHeight(root);
+    return temp;
+}

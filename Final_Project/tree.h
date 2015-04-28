@@ -24,6 +24,7 @@ private:
     //node *searchTreeValueCount(node *treeNode, int v);
     node *print(node *n);
     node *build(node *n);
+    int treeHeight(node *p);
     //node* maximum(node* n);
 
 public:
@@ -37,6 +38,7 @@ public:
     int ave();
     int total();
     int frequency(int n);
+    int treeH();
 };
 
 #endif // TREE_H_INCLUDED
