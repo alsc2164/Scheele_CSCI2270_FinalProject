@@ -253,6 +253,7 @@ int tree::treeH()
 }
 void tree::output()
 {
+    order.clear();
     build(root);
     ofstream outfile;
     outfile.open("outfile.txt");
@@ -263,6 +264,7 @@ void tree::output()
         outfile << order[i] << ", ";
     }
     outfile << order[order.size()-1] << std::endl;
+    outfile << "Number of data points: " << length() << endl;
     outfile << "Maximum: " << maximum() << " Minimum: " << minimum() << std::endl;
     outfile << "Total: " << total() << " Average: " << ave() << std:: endl;
     outfile.close();

@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 {
     tree t;
     string STRING;
-    ifstream infile("number.txt");
+    ifstream infile(argv[1]);
     //int rankings;
     //string title;
     int v;
