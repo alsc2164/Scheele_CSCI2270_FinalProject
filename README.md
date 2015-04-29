@@ -41,6 +41,11 @@ Reads in a file that contains a list of numbers. Uses differen't functions to ma
 Directions for use:
   The code reads in a file as a command line argument. Numbers should be entered either comma seperated or each number on their own line. Once running the user will be promted to select what the user would like to do with the data.
   
+How to run:
+  The user must donwload three seperate files, including tree.h, tree.cpp, number.txt, and main.cpp. The file "number.txt" is just an example text file to use. Any text file with numbers will work.
+
+
+  
 System Requirements:
   Will work on all systems.
   
