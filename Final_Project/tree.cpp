@@ -160,15 +160,17 @@ node* tree::print(node* n)
         print(x->right);
     }
 }
+//This function is used to build the binary tree into the vector.
+//This is a recursive function.
 node* tree::build(node* n)
 {
     node *x = n;
     if(x->left!=NULL){
-        build(x->left);
+        build(x->left);//This is the part that traverses down left branches.
     }
-    order.push_back(x->value);
+    order.push_back(x->value);//If you look here you will see that this function clearly turns a tree into a vector.
     if(x->right!=NULL){
-        build(x->right);
+        build(x->right);//This is the part that traverses down right branches.
     }
 }
 void tree::printOrder()
