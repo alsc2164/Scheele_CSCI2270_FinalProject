@@ -148,6 +148,7 @@ void tree::deleteNode(int v)
             }
         }
     }
+    //prints the tree
 node* tree::print(node* n)
 {
     node *x = n;
@@ -173,6 +174,8 @@ node* tree::build(node* n)
         build(x->right);//This is the part that traverses down right branches.
     }
 }
+
+//prints the tree in order
 void tree::printOrder()
 {
     order.clear();
@@ -202,6 +205,7 @@ int tree::minimum()
     return x->value;
 }
 
+//sums up every value in the tree and prints the result
 int tree::total()
 {
     order.clear();
@@ -213,11 +217,16 @@ int tree::total()
     }
     return sum;
 }
+
+//sums up all of the values in the tree and divides that sum by the total number of nodes
 int tree::ave()
 {
     total();
     return sum/order.size();
 }
+
+//prints out the number of times a value (given by the user) shows up in the tree
+
 int tree::frequency(int n)
 {
     order.clear();
@@ -233,6 +242,8 @@ int tree::frequency(int n)
     return counter;
 }
 
+//prints out the total height of the tree in relation to the values of the tree
+
 int tree::treeHeight(node *p)
 {
     if(p == NULL)
@@ -243,17 +254,26 @@ int tree::treeHeight(node *p)
     int right = treeHeight(p->right);
     return 1 + std::max(left, right);
 }
+
+//prints out how many nodes are in the tree
+
 int tree::length()
 {
     order.clear();
     build(root);
     return order.size();
 }
+
+//function that calls the treeHeight function and returns the value as an integer
+
 int tree::treeH()
 {
     int temp = treeHeight(root);
     return temp;
 }
+
+//prints out the current state of the binary tree. Gives current values of different aspects.
+
 void tree::output()
 {
     order.clear();
