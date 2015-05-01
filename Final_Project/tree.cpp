@@ -243,6 +243,7 @@ int tree::treeHeight(node *p)
 }
 int tree::length()
 {
+    order.clear();
     build(root);
     return order.size();
 }
