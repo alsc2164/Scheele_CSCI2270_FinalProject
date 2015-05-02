@@ -148,7 +148,6 @@ void tree::deleteNode(int v)
             }
         }
     }
-    //prints the tree
 node* tree::print(node* n)
 {
     node *x = n;
@@ -161,21 +160,17 @@ node* tree::print(node* n)
         print(x->right);
     }
 }
-//This function is used to build the binary tree into the vector.
-//This is a recursive function.
 node* tree::build(node* n)
 {
     node *x = n;
     if(x->left!=NULL){
-        build(x->left);//This is the part that traverses down left branches.
+        build(x->left);
     }
-    order.push_back(x->value);//If you look here you will see that this function clearly turns a tree into a vector.
+    order.push_back(x->value);
     if(x->right!=NULL){
-        build(x->right);//This is the part that traverses down right branches.
+        build(x->right);
     }
 }
-
-//prints the tree in order
 void tree::printOrder()
 {
     order.clear();
@@ -205,7 +200,6 @@ int tree::minimum()
     return x->value;
 }
 
-//sums up every value in the tree and prints the result
 int tree::total()
 {
     order.clear();
@@ -217,18 +211,14 @@ int tree::total()
     }
     return sum;
 }
-
-//sums up all of the values in the tree and divides that sum by the total number of nodes
 int tree::ave()
 {
     total();
     return sum/order.size();
 }
-
-//prints out the number of times a value (given by the user) shows up in the tree
-
 int tree::frequency(int n)
 {
+	
     order.clear();
     build(root);
     int counter = 0;
@@ -239,10 +229,52 @@ int tree::frequency(int n)
             counter++;
         }
     }
+    if(counter == 0)  // Contribution to project
+    {
+		cout << n << " does not exist on the list. Please enter another word." << endl;  //When the user enter word they wish to find the frequency of that does not exist on the text file
+	}		// print out the statement to inform the user that the word they enter does not exist.
     return counter;
 }
 
-//prints out the total height of the tree in relation to the values of the tree
+int tree::print_numbers_forward_and_backward()    //Contribution to project
+{
+        int array [10];		//Basically, this method when runs will propmt the user for 10 input integer values
+        int temp;
+        for (int i =0; i<10; i++)
+        {
+        cout << "Enter integer number: " << endl;
+        cin >> array[i];
+        }
+        for (int i=0; i<10; i++)
+        {
+                for (int j=0; j<9; j++)		//Then, it goes into quick sort to put the entered values in order
+                {
+                        if(array[j]>array[j+1])
+                        {
+                temp=array[j];
+                array[j]=array[j+1];
+                array[j+1]=temp;
+                        }
+                }
+        }
+        cout << "The integers in ascending order are : ";
+        for (int i=0;i<10;i++)   // print out whatever the numbers user entered in order
+        { 
+           cout <<"\n";
+           cout <<array[i];
+           cout << "\n";
+        } 
+        cout << "The integers in reverse order are: ";   //print out whatever the numbers the user entered in reverse order
+        for(int i = 9; i>=0;  i--)
+        {
+			cout <<"\n";
+           cout <<array[i];
+           cout << "\n";
+	   }
+			
+        return 0; 
+ }
+
 
 int tree::treeHeight(node *p)
 {
@@ -254,26 +286,16 @@ int tree::treeHeight(node *p)
     int right = treeHeight(p->right);
     return 1 + std::max(left, right);
 }
-
-//prints out how many nodes are in the tree
-
 int tree::length()
 {
-    order.clear();
     build(root);
     return order.size();
 }
-
-//function that calls the treeHeight function and returns the value as an integer
-
 int tree::treeH()
 {
     int temp = treeHeight(root);
     return temp;
 }
-
-//prints out the current state of the binary tree. Gives current values of different aspects.
-
 void tree::output()
 {
     order.clear();
