@@ -37,6 +37,7 @@ public:
     int ave();
     int total();
     int frequency(int n);
+    int print_numbers_forward_and_backward();
     int treeH();
     void output();
     int length();
