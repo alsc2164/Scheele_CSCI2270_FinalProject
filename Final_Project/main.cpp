@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
         case 1:
             {
                 int pick2 = 0;
-                while(pick2 != 9)
+                while(pick2 != 10)
                 {
                     cout << "====Print Data Menu====" << endl;
                     cout << "1.Print Data in Order" << endl;
@@ -50,10 +50,11 @@ int main(int argc, char* argv[])
                     cout << "3.Print Min" << endl;
                     cout << "4.Print Average" << endl;
                     cout << "5.Find Number Frequency" << endl;
-                    cout << "6.Print total" << endl;
-                    cout << "7.Print tree height" << endl;
-                    cout << "8.Print Number of data Points" << endl;
-                    cout << "9.Back to main menu" << endl;
+                    cout << "6.Find Most Appeared Number" << endl;
+                    cout << "7.Print total" << endl;
+                    cout << "8.Print tree height" << endl;
+                    cout << "9.Print Number of data Points" << endl;
+                    cout << "10.Back to main menu" << endl;
                     cin >> pick2;
                     switch(pick2)
                     {
@@ -77,13 +78,18 @@ int main(int argc, char* argv[])
                         cout << "This number appears " << t.frequency(pick) << " times." << endl;
                     }
                         break;
-                    case 6:
+                    case 6:{
+							
+							t.print_numbers_forward_and_backward();
+					}
+					break;
+                    case 7:
                         cout << "The total is: " << t.total() << endl;
                         break;
-                    case 7:
+                    case 8:
                         cout << "Tree Height: " << t.treeH()<<endl;
                         break;
-                    case 8:
+                    case 9:
                         cout << "The number of data points: " << t.length() << endl;
                         break;
                     }
