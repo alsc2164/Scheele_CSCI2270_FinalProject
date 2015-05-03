@@ -72,6 +72,7 @@ node *tree::searchTree(node * treeNode, int v)
     //node *treeNode = root;
     if(treeNode == NULL)
     {
+        cout<<"This number is not in the current list"<<endl;
         return NULL;
     }
     else if(treeNode->value == v)
@@ -243,6 +244,7 @@ int tree::treeHeight(node *p)
 }
 int tree::length()
 {
+    order.clear();
     build(root);
     return order.size();
 }
